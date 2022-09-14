@@ -1,0 +1,17 @@
+<p>home works!</p>
+
+<div *ngIf="isConnected === true; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+    <h1>Connecté</h1>
+    <button (click)="OnLogout()">Logout</button>
+</ng-template>
+<ng-template #elseBlock>
+    <h1>Déconnecté</h1>
+    <form [formGroup]="formGroup" (ngSubmit)="OnLogin()">
+        <input formControlName="email" type="email" name="email" />
+        <input formControlName="passwd" type="password" name="passwd" />
+        <input type="submit" value="Login" />
+    </form>
+</ng-template>
+
+
